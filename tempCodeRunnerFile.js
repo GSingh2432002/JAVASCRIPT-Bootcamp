@@ -1,5 +1,5 @@
-let myData = new Date();
-// console.log(myData.toString()); 
-// console.log(myData.toDateString()); 
-// console.log(myData.toLocaleString()); 
-// console.log(typeof myData); 
+
+// console.log(jsUser.email);
+// Object.freeze(jsUser);
+// jsUser.email = "pksingh34@gmail.com";
+// console.log(jsUser.email);
