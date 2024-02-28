@@ -1,4 +1,3 @@
 
-// const addtwo = function(num){
-//     return num + 2
-// }
+// user.username = "Anchal";
+// user.welcomeMessage();
