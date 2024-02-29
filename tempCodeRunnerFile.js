@@ -1,3 +1,9 @@
+()
+// map.set('IN', "India");
+// map.set('USA', "United States of America");
+// map.set('FR', "France");
+// // console.log(map);
 
-// user.username = "Anchal";
-// user.welcomeMessage();
+// for(const [Key,value] of map){
+//     console.log(Key, ':-', value);
+// }
