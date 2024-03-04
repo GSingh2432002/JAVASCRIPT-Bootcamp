@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing Image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="150px" id="photoshop" src="../21.Events/White Be Yourself Life Quote.png" alt="Photoshop" ></li>
+            <li><img width="200px" id="japan" src="../21.Events/Untitled design.png" alt=""> </li>
+            <li><img width="150px" id="river" src="../21.Events/White Be Yourself Life Quote.png" alt=""></li>
+            <li><img width="200px" id="owl" src="../21.Events/Untitled design.png" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://goggle.com" id="google">Google</a> Google</li>
+        </ul>
+    </div>
+</body>
+<script>
+    //This gives less features
+       /* document.getElementById('owl').onclick = function(){
+        alert("Owl Clicked")
+    } */
+
+    /* document.getElementById('owl').addEventListener('click', function(){
+        alert(" Suddenly Owl Clicked");
+    }) */
+                //Notes:- Required to know
+                //type,timestamp,defaultPrevented,target,toElement,srcElement,currentTarget,clientX,clientY,screenX,screenY,altKey,ctrlKey,shiftKey,keyCode
+
+    //Event Propagation -> Propagation refers to how events travel through the Document Object Model (DOM) tree. The DOM tree is the structure which contains parent/child/sibling elements in relation to each other. You can think of propagation as electricity running through a wire, until it reaches its destination. The event needs to pass through every node on the DOM until it reaches the end, or if it is forcibly stopped.
+
+  /*  document.getElementById('images').addEventListener('click', function(e){
+        console.log("Clicked Inside the ul");
+    },false) */
+
+    // 1.1 Capturing -> It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down.
+    //If true value given then it will trigger capturing
+    /* document.getElementById('images').addEventListener('click', function(e){
+        console.log("Clicked Inside the ul");
+    },false) */
+
+    //Event Propagation
+    // 1.2 Bubbling -> When an event happens on a component, it first runs the event handler on it, then on its parent component, then all the way up on other ancestors’ components. By default, all event handles through this order from center component event to outermost component event.
+    /* document.getElementById('owl').addEventListener('click', function(e){
+        console.log(" Owl Clicked ");   
+        e.stopPropagation()
+    },false) */
+
+   /* document.getElementById('google').addEventListener('click',function(e){
+        console.log("Google Clicked");
+        e.stopPropagation();
+        e.preventDefault();
+    },false) */
+
+    //To remove a image while clicking
+    document.querySelector('#images').addEventListener('click', function(e){
+        //console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        
+    })
+</script>
+</html>
